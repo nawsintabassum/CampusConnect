@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Assignments · CampusConnect</title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/responsive.css"></head>
+<body data-page="assignments">
+<header class="topbar"><div class="topbar-inner"><div class="brand"><button class="icon-btn menu-toggle" style="display:none">☰</button><a class="brand" href="dashboard.html"><span class="logo">CC</span><span class="brand-text">CampusConnect</span></a></div><div class="top-actions"><label class="switch" title="Theme"><input type="checkbox" data-theme-toggle><span class="slider"></span></label><div class="profile-row"><div class="avatar" data-user-initial>S</div><strong data-user-name>Student</strong></div></div></div></header>
+<div class="app-layout">
+<aside class="sidebar" id="sidebar">
+  <div class="nav-label">Workspace</div>
+  <a class="nav-link" data-page="dashboard" href="dashboard.html"><span class="ico">⌂</span>Dashboard</a>
+  <a class="nav-link" data-page="notices" href="notices.html"><span class="ico">📢</span>Notice Board</a>
+  <a class="nav-link" data-page="routine" href="routine.html"><span class="ico">🗓</span>Class Routine</a>
+  <a class="nav-link" data-page="assignments" href="assignments.html"><span class="ico">✓</span>Assignments</a>
+  <a class="nav-link" data-page="events" href="events.html"><span class="ico">🎟</span>Events</a>
+  <a class="nav-link" data-page="resources" href="resources.html"><span class="ico">📚</span>Resources</a>
+  <div class="nav-label">Account</div>
+  <a class="nav-link" data-page="profile" href="profile.html"><span class="ico">◉</span>Profile</a>
+  <a class="nav-link" data-page="settings" href="settings.html"><span class="ico">⚙</span>Settings</a>
+  <div class="sidebar-bottom"><div class="card section"><div class="profile-row"><div class="avatar" data-user-initial>S</div><div><strong data-user-name>Student</strong><div class="muted" style="font-size:.78rem">CampusConnect</div></div></div><button class="btn btn-secondary btn-sm" style="width:100%;margin-top:12px" data-logout>Logout</button></div></div>
+</aside>
+<main class="main"><div class="container">
+<div class="page-head"><div><h1>Assignment Tracker</h1><p>Keep every deadline and task under control.</p></div><button class="btn btn-primary" id="addAssignment">+ Add Assignment</button></div>
+<div class="toolbar"><input class="input" id="assignmentSearch" placeholder="Search assignments..."><select class="select" id="statusFilter"><option value="">All Statuses</option><option>Pending</option><option>In Progress</option><option>Completed</option></select><select class="select" id="priorityFilter"><option value="">All Priorities</option><option>Low</option><option>Medium</option><option>High</option></select></div>
+<div class="search-result-count" id="resultCount"></div><div id="assignmentList" class="grid grid-2"></div>
+</div></main></div>
+<div class="toast-container"></div><script src="js/app.js"></script><script src='js/assignments.js'></script></body></html>

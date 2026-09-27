@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard · CampusConnect</title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/responsive.css"></head>
+<body data-page="dashboard">
+<header class="topbar"><div class="topbar-inner"><div class="brand"><button class="icon-btn menu-toggle" style="display:none">☰</button><a class="brand" href="dashboard.html"><span class="logo">CC</span><span class="brand-text">CampusConnect</span></a></div><div class="top-actions"><label class="switch" title="Theme"><input type="checkbox" data-theme-toggle><span class="slider"></span></label><div class="profile-row"><div class="avatar" data-user-initial>S</div><strong data-user-name>Student</strong></div></div></div></header>
+<div class="app-layout">
+<aside class="sidebar" id="sidebar">
+  <div class="nav-label">Workspace</div>
+  <a class="nav-link" data-page="dashboard" href="dashboard.html"><span class="ico">⌂</span>Dashboard</a>
+  <a class="nav-link" data-page="notices" href="notices.html"><span class="ico">📢</span>Notice Board</a>
+  <a class="nav-link" data-page="routine" href="routine.html"><span class="ico">🗓</span>Class Routine</a>
+  <a class="nav-link" data-page="assignments" href="assignments.html"><span class="ico">✓</span>Assignments</a>
+  <a class="nav-link" data-page="events" href="events.html"><span class="ico">🎟</span>Events</a>
+  <a class="nav-link" data-page="resources" href="resources.html"><span class="ico">📚</span>Resources</a>
+  <div class="nav-label">Account</div>
+  <a class="nav-link" data-page="profile" href="profile.html"><span class="ico">◉</span>Profile</a>
+  <a class="nav-link" data-page="settings" href="settings.html"><span class="ico">⚙</span>Settings</a>
+  <div class="sidebar-bottom"><div class="card section"><div class="profile-row"><div class="avatar" data-user-initial>S</div><div><strong data-user-name>Student</strong><div class="muted" style="font-size:.78rem">CampusConnect</div></div></div><button class="btn btn-secondary btn-sm" style="width:100%;margin-top:12px" data-logout>Logout</button></div></div>
+</aside>
+<main class="main"><div class="container">
+<div class="page-head"><div><h1>Good evening, <span id="dashName">Student</span> 👋</h1><p>Here’s your academic overview for today.</p></div><a class="btn btn-primary" href="assignments.html">+ Add Assignment</a></div>
+<div class="grid grid-4 mb-16">
+  <div class="card stat-card"><div><div class="stat-label">Total Courses</div><div class="stat-number" id="statCourses">6</div></div><div class="stat-icon">📘</div></div>
+  <div class="card stat-card"><div><div class="stat-label">Pending Assignments</div><div class="stat-number" id="statAssignments">0</div></div><div class="stat-icon">✓</div></div>
+  <div class="card stat-card"><div><div class="stat-label">Upcoming Events</div><div class="stat-number" id="statEvents">0</div></div><div class="stat-icon">🎟</div></div>
+  <div class="card stat-card"><div><div class="stat-label">Attendance</div><div class="stat-number" id="statAttendance">87%</div></div><div class="stat-icon">◔</div></div>
+</div>
+<div class="grid grid-3">
+ <section class="card section" style="grid-column:span 2"><div class="section-title"><h2>Today's Classes</h2><a class="muted" href="routine.html">View routine →</a></div>
+  <div class="list">
+   <div class="list-item"><div class="card-top"><div><strong>Software Requirements Engineering</strong><div class="meta">SWE 212 · 09:30 AM–11:00 AM · Room 401</div></div><span class="badge badge-blue">Today</span></div></div>
+   <div class="list-item"><div class="card-top"><div><strong>Database Management Systems</strong><div class="meta">CSE 221 · 01:00 PM–02:30 PM · Room 305</div></div><span class="badge badge-gray">Lecture</span></div></div>
+  </div>
+ </section>
+ <section class="card section"><div class="section-title"><h2>Study Progress</h2></div><div class="kpi-row"><span class="muted">Semester progress</span><b>68%</b></div><div class="progress"><span style="width:68%"></span></div><div class="kpi-row mt-16"><span class="muted">Weekly study goal</span><b>74%</b></div><div class="progress"><span style="width:74%"></span></div><div class="list mt-16"><div class="list-item"><strong>Student ID</strong><div class="muted" id="dashId">—</div></div><div class="list-item"><strong>Academic Standing</strong><div class="muted">Good Standing</div></div></div></section>
+</div>
+<div class="grid grid-2" style="margin-top:18px">
+ <section class="card section"><div class="section-title"><h2>Upcoming Assignments</h2><a href="assignments.html" class="muted">View all →</a></div><div id="dashAssignments" class="list"></div></section>
+ <section class="card section"><div class="section-title"><h2>Recent Notices</h2><a href="notices.html" class="muted">View all →</a></div><div id="dashNotices" class="list"></div></section>
+ <section class="card section"><div class="section-title"><h2>Upcoming Events</h2><a href="events.html" class="muted">Explore →</a></div><div id="dashEvents" class="list"></div></section>
+ <section class="card section"><div class="section-title"><h2>Quick Actions</h2></div><div class="grid grid-2"><a class="btn btn-secondary" href="assignments.html">✓ Assignments</a><a class="btn btn-secondary" href="routine.html">🗓 Routine</a><a class="btn btn-secondary" href="resources.html">📚 Resources</a><a class="btn btn-secondary" href="profile.html">◉ Profile</a></div></section>
+</div>
+</div></main></div>
+<div class="toast-container"></div><script src="js/app.js"></script><script src='js/dashboard.js'></script></body></html>

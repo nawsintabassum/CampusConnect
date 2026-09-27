@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Profile · CampusConnect</title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/responsive.css"></head>
+<body data-page="profile">
+<header class="topbar"><div class="topbar-inner"><div class="brand"><button class="icon-btn menu-toggle" style="display:none">☰</button><a class="brand" href="dashboard.html"><span class="logo">CC</span><span class="brand-text">CampusConnect</span></a></div><div class="top-actions"><label class="switch" title="Theme"><input type="checkbox" data-theme-toggle><span class="slider"></span></label><div class="profile-row"><div class="avatar" data-user-initial>S</div><strong data-user-name>Student</strong></div></div></div></header>
+<div class="app-layout">
+<aside class="sidebar" id="sidebar">
+  <div class="nav-label">Workspace</div>
+  <a class="nav-link" data-page="dashboard" href="dashboard.html"><span class="ico">⌂</span>Dashboard</a>
+  <a class="nav-link" data-page="notices" href="notices.html"><span class="ico">📢</span>Notice Board</a>
+  <a class="nav-link" data-page="routine" href="routine.html"><span class="ico">🗓</span>Class Routine</a>
+  <a class="nav-link" data-page="assignments" href="assignments.html"><span class="ico">✓</span>Assignments</a>
+  <a class="nav-link" data-page="events" href="events.html"><span class="ico">🎟</span>Events</a>
+  <a class="nav-link" data-page="resources" href="resources.html"><span class="ico">📚</span>Resources</a>
+  <div class="nav-label">Account</div>
+  <a class="nav-link" data-page="profile" href="profile.html"><span class="ico">◉</span>Profile</a>
+  <a class="nav-link" data-page="settings" href="settings.html"><span class="ico">⚙</span>Settings</a>
+  <div class="sidebar-bottom"><div class="card section"><div class="profile-row"><div class="avatar" data-user-initial>S</div><div><strong data-user-name>Student</strong><div class="muted" style="font-size:.78rem">CampusConnect</div></div></div><button class="btn btn-secondary btn-sm" style="width:100%;margin-top:12px" data-logout>Logout</button></div></div>
+</aside>
+<main class="main"><div class="container">
+<div class="page-head"><div><h1>Student Profile</h1><p>Manage the information shown across your student portal.</p></div></div>
+<div class="grid grid-3"><section class="card section text-center"><div class="avatar" style="width:90px;height:90px;font-size:2rem;margin:auto" data-user-initial>S</div><h2 data-user-name>Student</h2><p class="muted">Software Engineering Student</p><span class="badge badge-green">Active Student</span></section>
+<section class="card section" style="grid-column:span 2"><form id="profileForm"><div class="grid grid-2"><div class="form-group"><label>Full Name</label><input class="input" name="name" required></div><div class="form-group"><label>Student ID</label><input class="input" name="studentId" required></div><div class="form-group"><label>Department</label><input class="input" name="department" required></div><div class="form-group"><label>University</label><input class="input" name="university" required></div><div class="form-group"><label>Semester</label><input class="input" name="semester" required></div><div class="form-group"><label>Email</label><input class="input" type="email" name="email" required></div></div><div class="form-group"><label>Skills</label><input class="input" name="skills"></div><div class="form-group"><label>Interests</label><input class="input" name="interests"></div><button class="btn btn-primary">Save Profile</button></form></section></div>
+</div></main></div>
+<div class="toast-container"></div><script src="js/app.js"></script><script src='js/profile.js'></script></body></html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Settings · CampusConnect</title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/responsive.css"></head>
+<body data-page="settings">
+<header class="topbar"><div class="topbar-inner"><div class="brand"><button class="icon-btn menu-toggle" style="display:none">☰</button><a class="brand" href="dashboard.html"><span class="logo">CC</span><span class="brand-text">CampusConnect</span></a></div><div class="top-actions"><label class="switch" title="Theme"><input type="checkbox" data-theme-toggle><span class="slider"></span></label><div class="profile-row"><div class="avatar" data-user-initial>S</div><strong data-user-name>Student</strong></div></div></div></header>
+<div class="app-layout">
+<aside class="sidebar" id="sidebar">
+  <div class="nav-label">Workspace</div>
+  <a class="nav-link" data-page="dashboard" href="dashboard.html"><span class="ico">⌂</span>Dashboard</a>
+  <a class="nav-link" data-page="notices" href="notices.html"><span class="ico">📢</span>Notice Board</a>
+  <a class="nav-link" data-page="routine" href="routine.html"><span class="ico">🗓</span>Class Routine</a>
+  <a class="nav-link" data-page="assignments" href="assignments.html"><span class="ico">✓</span>Assignments</a>
+  <a class="nav-link" data-page="events" href="events.html"><span class="ico">🎟</span>Events</a>
+  <a class="nav-link" data-page="resources" href="resources.html"><span class="ico">📚</span>Resources</a>
+  <div class="nav-label">Account</div>
+  <a class="nav-link" data-page="profile" href="profile.html"><span class="ico">◉</span>Profile</a>
+  <a class="nav-link" data-page="settings" href="settings.html"><span class="ico">⚙</span>Settings</a>
+  <div class="sidebar-bottom"><div class="card section"><div class="profile-row"><div class="avatar" data-user-initial>S</div><div><strong data-user-name>Student</strong><div class="muted" style="font-size:.78rem">CampusConnect</div></div></div><button class="btn btn-secondary btn-sm" style="width:100%;margin-top:12px" data-logout>Logout</button></div></div>
+</aside>
+<main class="main"><div class="container">
+<div class="page-head"><div><h1>Settings</h1><p>Customize your CampusConnect experience.</p></div></div>
+<div class="card section">
+ <div class="settings-row"><div><strong>Dark Mode</strong><div class="muted">Use a darker interface for low-light environments.</div></div><label class="switch"><input type="checkbox" data-theme-toggle><span class="slider"></span></label></div>
+ <div class="settings-row"><div><strong>Notifications</strong><div class="muted">Show reminders for assignments and events.</div></div><label class="switch"><input type="checkbox" id="notifications" checked><span class="slider"></span></label></div>
+ <div class="settings-row"><div><strong>Reset Application Data</strong><div class="muted">Restore sample data and remove local changes.</div></div><button class="btn btn-danger" id="resetData">Reset Data</button></div>
+ <div class="settings-row"><div><strong>Sign Out</strong><div class="muted">End your current CampusConnect session.</div></div><button class="btn btn-secondary" data-logout>Logout</button></div>
+</div>
+</div></main></div>
+<div class="toast-container"></div><script src="js/app.js"></script><script>
+document.addEventListener('DOMContentLoaded',()=>{
+  if(document.body.dataset.page!=='settings')return; CC.requireAuth();
+  const n=document.querySelector('#notifications'); n.checked=CC.get('cc_notifications_enabled',true);
+  n.addEventListener('change',()=>{CC.set('cc_notifications_enabled',n.checked);CC.toast('Notification preference saved');});
+  document.querySelector('#resetData').addEventListener('click',()=>{
+    if(confirm('Reset all CampusConnect data to the original sample state?')){Object.values(CC.keys).forEach(k=>{if(k!=='cc_user')localStorage.removeItem(k)});localStorage.removeItem('cc_events');localStorage.removeItem('cc_resources');CC.initData();CC.toast('Application data reset');setTimeout(()=>location.reload(),500);}
+  });
+});
+</script></body></html>
